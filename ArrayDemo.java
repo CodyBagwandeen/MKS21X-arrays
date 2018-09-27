@@ -39,11 +39,32 @@ public class ArrayDemo{
     return (counter);
   }
 
+  public static void fill2D(int[][] vals){
+    for ( int r = 0; r < vals.length; r++) {
+      for ( int c = 0; c < vals[r].length; c++) {
+        if ( c == r)
+        vals[r][c] = 3;
+        else {
+          vals[r][c] = 1;
+        }
+      }
+    }
+}
 
-
-
-
-
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] newArray = new int[vals.length][];
+    for ( int r = 0; r < vals.length; r++) {
+      newArray[r] = new int[vals[r].length];
+      for ( int c = 0; c < vals[r].length; c++) {
+        if ( vals[r][c] < 0 )
+        newArray[r][c] = 3;
+        else {
+          newArray[r][c] = vals[r][c];
+        }
+      }
+    }
+    return newArray;
+}
 
 
 public static void main(String[] args) {
@@ -53,5 +74,9 @@ public static void main(String[] args) {
   System.out.print("\n");
   System.out.print(countZeros2D(multiC));
   System.out.print("\n");
+  fill2D(multiC);
+  printArray(multiC);
+  System.out.print("\n");
+  printArray(fill2DCopy(multiC)); //I would do more test cases but I got to sleep at some point.
   }
 }
