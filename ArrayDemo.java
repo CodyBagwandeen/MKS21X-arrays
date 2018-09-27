@@ -28,6 +28,16 @@ public class ArrayDemo{
     System.out.print("[" + s + "]");
   }
 
+  public static int countZeros2D(int[][] nums){
+    int counter = 0;
+    for ( int r = 0; r < nums.length ; r++) {
+      for ( int c = 0; c < nums[r].length; c++ ) {
+        if ( nums[r][c] == 0)
+        counter++;
+      }
+    }
+    return (counter);
+  }
 
 
 
@@ -40,5 +50,8 @@ public static void main(String[] args) {
   printArray(anArray);
   System.out.print(" \n");
   printArray(multiC);
-}
+  System.out.print("\n");
+  System.out.print(countZeros2D(multiC));
+  System.out.print("\n");
+  }
 }
